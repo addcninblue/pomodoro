@@ -1,0 +1,37 @@
+<!-- https://tailwindui.com/components/application-ui/navigation/navbars -->
+<header>
+  <section class="">
+    <nav role="navigation">
+      <div class="relative flex items-center justify-between">
+        <div class="absolute inset-y-10 left-0 flex items-center">
+          <span class="px-10 py-2 text-2xl font-medium font-mono">pomodoro.addcnin.blue/<%= @id %></span>
+        </div>
+        <div class="absolute inset-y-10 right-0 flex items-center">
+          <span class="px-10 py-2 text-2xl font-medium font-mono"><%= link "help", to: Routes.help_path(@socket, :index) %> </span>
+        </div>
+        <%# <%= if function_exported?(Routes, :live_dashboard_path, 2) do %1> %>
+        <%#   <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@socket, :home) %1></li> %>
+        <%# <% end %1> %>
+      </div>
+    </nav>
+  </section>
+</header>
+
+<%= if @end_time do %>
+  <div class="flex h-screen">
+    <div class="m-auto">
+      test
+    </div>
+  </div>
+<% else %>
+  <div class="flex h-screen">
+    <div class="m-auto">
+      <!-- https://stackoverflow.com/questions/55056513/vertical-align-with-tailwindcss-across-full-screen-div -->
+      <div id="start" class="text-5xl font-medium font-mono py-4 underline text-gray-600"><button>start</button></div>
+      <div id="start" class="text-5xl font-medium font-mono py-4"><button phx-click="start-55">55:00</button></div>
+      <div id="start" class="text-5xl font-medium font-mono py-4"><button phx-click="start-25">25:00</button></div>
+      <div id="start" class="text-5xl font-medium font-mono py-4"><button phx-click="start-20">20:00</button></div>
+      <div id="start" class="text-5xl font-medium font-mono py-4"><button phx-click="start-10">10:00</button></div>
+    </div>
+  </div>
+<% end %>
