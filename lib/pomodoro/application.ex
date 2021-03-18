@@ -12,9 +12,10 @@ defmodule Pomodoro.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Pomodoro.PubSub},
       # Start the Endpoint (http/https)
-      PomodoroWeb.Endpoint
+      PomodoroWeb.Endpoint,
       # Start a worker by calling: Pomodoro.Worker.start_link(arg)
       # {Pomodoro.Worker, arg}
+      {Pomodoro.Rooms, name: Pomodoro.Rooms}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
