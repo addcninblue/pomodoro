@@ -23,8 +23,8 @@ defmodule PomodoroWeb.Endpoint do
   plug Plug.Static,
     at: "/",
     from: :pomodoro,
-    gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    gzip: true,
+    only: ~w(css fonts images js favicon.ico robots.txt manifest.webmanifest sw.js)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

@@ -4,10 +4,11 @@
     <nav role="navigation">
       <div class="relative flex items-center justify-between">
         <div class="absolute inset-y-10 left-0 flex items-center">
-          <span class="px-10 py-2 text-2xl font-medium font-mono">pomodoro.addcnin.blue</span>
+          <span class="text-black dark:text-white px-10 py-2 text-2xl font-medium font-mono hidden sm:flex">pomodoro.addcnin.blue</span>
+          <span class="text-black dark:text-white px-10 py-2 text-2xl font-medium font-mono sm:hidden">pomodoro</span>
         </div>
         <div class="absolute inset-y-10 right-0 flex items-center">
-          <span class="px-10 py-2 text-2xl font-medium font-mono"><%= link "help", to: Routes.help_path(@socket, :index) %> </span>
+          <span class="text-black dark:text-white px-10 py-2 text-2xl font-medium font-mono"><%= link "help", to: Routes.help_path(@socket, :index) %> </span>
         </div>
         <%# <%= if function_exported?(Routes, :live_dashboard_path, 2) do %1> %>
         <%#   <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@socket, :home) %1></li> %>
@@ -21,7 +22,7 @@
 <div class="flex h-screen">
   <div class="m-auto">
   <form phx-submit="search">
-    <input class="font-medium text-xl font-mono text-center" type="text" name="q" value="<%= @room %>" placeholder="Create Room" autocomplete="off"/>
+    <input class="text-black dark:text-white bg-white dark:bg-black font-medium text-xl font-mono text-center" type="text" name="q" value="<%= @room %>" placeholder="Create Room" autocomplete="off"/>
   </form>
   </div>
 </div>

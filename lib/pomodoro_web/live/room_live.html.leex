@@ -4,10 +4,11 @@
     <nav role="navigation">
       <div class="relative flex items-center justify-between">
         <div class="absolute inset-y-10 left-0 flex items-center">
-          <span class="px-10 py-2 text-2xl font-medium font-mono">pomodoro.addcnin.blue/room/<%= @id %></span>
+          <span class="text-black dark:text-white px-10 py-2 text-2xl font-medium font-mono hidden sm:flex">pomodoro.addcnin.blue/room/<%= @id %></span>
+          <span class="text-black dark:text-white px-10 py-2 text-2xl font-medium font-mono sm:hidden">pomodoro/<%= @id %></span>
         </div>
         <div class="absolute inset-y-10 right-0 flex items-center">
-          <span class="px-10 py-2 text-2xl font-medium font-mono"><%= link "help", to: Routes.help_path(@socket, :index) %> </span>
+          <span class="text-black dark:text-white px-10 py-2 text-2xl font-medium font-mono"><%= link "help", to: Routes.help_path(@socket, :index) %> </span>
         </div>
         <%# <%= if function_exported?(Routes, :live_dashboard_path, 2) do %1> %>
         <%#   <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@socket, :home) %1></li> %>
@@ -22,20 +23,20 @@
   <div class="m-auto text-center">
     <%= case @state do %>
       <% :start -> %>
-        <div class="text-5xl font-medium font-mono py-4 underline text-gray-600"><button>start</button></div>
-        <div class="text-5xl font-medium font-mono py-4"><button phx-click="time-55">55:00</button></div>
-        <div class="text-5xl font-medium font-mono py-4"><button phx-click="time-25">25:00</button></div>
-        <div class="text-5xl font-medium font-mono py-4"><button phx-click="time-20">20:00</button></div>
-        <div class="text-5xl font-medium font-mono py-4"><button phx-click="time-10">10:00</button></div>
+        <div class="text-black dark:text-white text-5xl font-medium font-mono py-4 underline text-gray-600"><button>start</button></div>
+        <div class="text-black dark:text-white text-5xl font-medium font-mono py-4"><button phx-click="time-55">55:00</button></div>
+        <div class="text-black dark:text-white text-5xl font-medium font-mono py-4"><button phx-click="time-25">25:00</button></div>
+        <div class="text-black dark:text-white text-5xl font-medium font-mono py-4"><button phx-click="time-20">20:00</button></div>
+        <div class="text-black dark:text-white text-5xl font-medium font-mono py-4"><button phx-click="time-10">10:00</button></div>
       <% state when state in [:timer, :timer_paused] -> %>
-        <div class="text-5xl font-medium font-mono"> <%= @time_remaining %> </div>
+        <div class="text-black dark:text-white text-5xl font-medium font-mono"> <%= @time_remaining %> </div>
       <% :start_break -> %>
-        <div class="text-5xl font-medium font-mono py-4 underline text-gray-600"><button>break</button></div>
-        <div class="text-5xl font-medium font-mono py-4"><button phx-click="break-15">15:00</button></div>
-        <div class="text-5xl font-medium font-mono py-4"><button phx-click="break-10">10:00</button></div>
-        <div class="text-5xl font-medium font-mono py-4"><button phx-click="break-5">05:00</button></div>
+        <div class="text-black dark:text-white text-5xl font-medium font-mono py-4 underline text-gray-600"><button>break</button></div>
+        <div class="text-black dark:text-white text-5xl font-medium font-mono py-4"><button phx-click="break-15">15:00</button></div>
+        <div class="text-black dark:text-white text-5xl font-medium font-mono py-4"><button phx-click="break-10">10:00</button></div>
+        <div class="text-black dark:text-white text-5xl font-medium font-mono py-4"><button phx-click="break-5">05:00</button></div>
       <% state when state in [:break_timer, :break_timer_paused] -> %>
-        <div class="text-5xl font-medium font-mono"> <%= @time_remaining %> </div>
+        <div class="text-black dark:text-white text-5xl font-medium font-mono"> <%= @time_remaining %> </div>
     <% end %>
   </div>
 </div>
