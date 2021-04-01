@@ -61,6 +61,26 @@ defmodule PomodoroWeb.RoomLive do
   end
 
   @impl true
+  def handle_event(
+        "click",
+        %{},
+        %Phoenix.LiveView.Socket{assigns: %{id: id}} = socket
+      ) do
+    Pomodoro.Rooms.pause_or_resume(id)
+    {:noreply, socket}
+  end
+
+  @impl true
+  def handle_event(
+        "dblclick",
+        %{},
+        %Phoenix.LiveView.Socket{assigns: %{id: id}} = socket
+      ) do
+    Pomodoro.Rooms.reset(id)
+    {:noreply, socket}
+  end
+
+  @impl true
   def handle_info(
         {:state, %Pomodoro.Room{state: state, end_time: end_time} = _state},
         %Phoenix.LiveView.Socket{assigns: %{timer: timer}} = socket
